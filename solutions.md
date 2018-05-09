@@ -83,3 +83,21 @@ SELECT * FROM Customer WHERE Company IS null;
 #Group by
 
 ##Select all artist ids, artist names, and count how many albums they have.
+
+SELECT ar.artistId, ar.name, count(*) 
+FROM Artist ar
+JOIN Album a ON ar.ArtistId = a.ArtistId 
+GROUP BY ar.artistId;
+
+#Distinct
+
+##Get all countries from the Customer table with no duplicates.
+SELECT DISTINCT Country FROM Customer;
+
+
+#Delete Rows
+
+##Select all records from the Customer table where fax is null;
+##Delete all records from the Customer table where fax is null;
+SELECT * FROM Customer WHERE Fax IS null;
+DELETE FROM Customer WHERE Fax IS null;
